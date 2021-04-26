@@ -1,0 +1,87 @@
+### Fundamentals:
+
+V-bind:
+
+V-for: 
+
+v-model: để bing giữa input vs một data property mà đã khai báo trước, dùng để binding 2 luồn dữ liệu giữa data và input 
+
+v-on: là một cách để tạo ra một số hoạt động như người dùng thực hiện các tác vụ như hover button, click vào button, submit form.
+
+Một cách hiện đại để viết v-on là thay vì viết v-on:click ta có thể viết @click .... 
+
+on:keyup.enter :
+
+v-href: như là cách truyền một đường dẫn của vue được dùng với v-bind:href=" đường dẫn"
+
+Ví dụ : mình có thể disabled button khi mà người dùng chưa nhập dữ liệu vào input
+
+v-bind:disabled=" điều kiện xảy ra"
+
+đối với v-bind mình có thể viết tắt :v-bind:disabled thành :disabled.
+
+v-bind có thể gồm: :src, :href, :disable
+
+Vue có hai cách để add class cho việc style một item đó là sử dung array và object nhưng bản thân object sẽ là cách đơn gian hơn cho việc thực hiện nó
+
+Cú pháp : :class="[
+
+trong này nào điều kiện để add classes
+
+]"- đối với việc sử dụng array
+
+cú pháp :class="{
+
+bên trong là điều kiện để add class
+
+}"
+
+computer properties: giúp chúng ta truyển hóa một số các tác vụ hoặc thực hiện một số tính toán.
+
+Ví dụ thực tế để ta có thể tính xem có bao nhiều kí tự mà người dùng nhập vào thẻ input
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d10ca383-5346-45da-a7ca-077ef516c7d7/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d10ca383-5346-45da-a7ca-077ef516c7d7/Untitled.png)
+
+cú pháp: computed:{
+
+bên trong là hàm tính toán
+
+}
+
+Đối khi sẽ khó phân biệt được khi nào nên dùng methods hay là computer properties:
+
+**khi thay muốn thay đổi data ta sử dung methods còn khi muốn thay đổi giá trị của data đã tồn tại ta dùng computer properties** 
+
+v-if dùng cho cấu trúc điều kiên if-else, gồm v-if, v-else-if, v-else
+
+v-show: cũng là một cách để thể hiện cấu trúc điều kiện nhưng chỉ theo một chiều
+
+v-for : dùng như một vòng lặp for nhưng điều cần nhớ khi sử dụng v-for là phải luôn luôn có id cho từng trường hợp riêng bằng cách sử dung v-bind:key còn viết tắt là :key="id trong này"
+
+computed properties: là một cách như để tính toán trong vue 
+
+cú pháp computed :{  
+
+viết dưới dạng function ở đây vd image(){ return .....}
+
+}
+
+**component and props:**
+
+component giống những khỗi nhỏ được mình tạo ra với mục đích là giúp dự án trở nên linh hoạt hơn, code sach hơn và có thể dùng lại code
+
+nhưng đôi khi có những thuộc tính của component ko thể được sử dụng trong chính vòng code của nó nên ta phải sử dụng props để có thể truyền những thuộc tính đó từ thẻ cha về thẻ component
+
+**communicating Events:**
+
+khi sử dụng component sẽ có những trường hợp khi mà ta ko thể sử dụng một methods mà thay đôi giá trị của biến cha nên những lúc đó ta  phải sử dụng keywork emit để có thể thực hiện 
+
+cú pháp this.$emit(" một giá trị trên biến component thường mà function in methods
+
+**form**
+
+**v-model** giúp tạo ra 2 luồng data binding 
+
+v-model.number ( typecasts the value as a number)
+
+@sumit.prevent là một cách để preventDefault cho form

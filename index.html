@@ -6,14 +6,38 @@
     <!-- Import Styles -->
     <link rel="stylesheet" href="./assets/styles.css" />
     <!-- Import Vue.js -->
+
     <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
   </head>
   <body>
     <div id="app">
-      <h1>Product goes here</h1>
+      <p v-if="onSale">{{brandProduct}}</p>
+      <p v-else>there is not sale</p>
+      <img :src="img" />
+      <a :href="url">Vue Mastery</a>
+      <div class="product-info">
+        <p v-if="inStock">in shop</p>
+        <p v-else>out of shop</p>
+        <ul>
+          <li v-for="item in items">{{item}}</li>
+          <li
+            v-for="(detail,index) in details"
+            :key="detail.id"
+            @click="updateState(index)"
+            class="color-circle"
+            :style="{backgroundColor:detail.color}"
+          ></li>
+        </ul>
+      </div>
+      <div>cart({{count}})</div>
+      <button @click="addItem" :disabled="inStock">add item</button>
     </div>
 
     <!-- Import Js -->
     <script src="./main.js"></script>
+    <!-- mount App -->
+    <script>
+      const MountedApp = app.mount('#app');
+    </script>
   </body>
 </html>
